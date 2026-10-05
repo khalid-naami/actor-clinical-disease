@@ -1,0 +1,40 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "type": "object",
+        "properties": {
+            "record_type": {
+                "type": "string",
+                "title": "Record Type"
+            },
+            "disease_name": {
+                "type": "string",
+                "title": "Disease Name"
+            },
+            "icd10": {
+                "type": "string",
+                "title": "ICD-10 Code"
+            },
+            "medical_nutrition_protocol": {
+                "type": "object",
+                "title": "Medical Nutrition Plan"
+            },
+            "fitt_exercise_prescription": {
+                "type": "object",
+                "title": "FITT Exercise Prescription"
+            },
+            "landmark_breakthrough_publications": {
+                "type": "array",
+                "title": "NEJM / Lancet Breakthrough Trials"
+            },
+            "recent_live_clinical_trials": {
+                "type": "array",
+                "title": "Europe PMC Live Studies"
+            },
+            "risk_stratification_results": {
+                "type": "object",
+                "title": "Patient Risk Scoring Results"
+            }
+        }
+    }
+}
