@@ -1,0 +1,94 @@
+{
+    "title": "Chronic Disease Clinical Intelligence Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "targetDisease": {
+            "title": "Target Chronic Disease",
+            "type": "string",
+            "description": "Select a specific chronic condition or analyze all 7 major diseases.",
+            "default": "All 7 Chronic Diseases",
+            "editor": "select",
+            "enum": [
+                "All 7 Chronic Diseases",
+                "Type 2 Diabetes Mellitus",
+                "Cardiovascular & Coronary Artery Disease",
+                "Essential Hypertension",
+                "Oncology & Cancer Prevention",
+                "Chronic Kidney Disease (CKD)",
+                "Chronic Obstructive Pulmonary Disease (COPD)",
+                "Alzheimer's Disease & Cognitive Decline"
+            ]
+        },
+        "includeNutritionProtocols": {
+            "title": "Include Medical Nutrition Protocols",
+            "type": "boolean",
+            "description": "Include therapeutic macronutrient splits, micronutrient guardrails, superfoods, and strictly prohibited foods.",
+            "default": true
+        },
+        "includeExercisePrescriptions": {
+            "title": "Include FITT Exercise Prescriptions",
+            "type": "boolean",
+            "description": "Include Frequency, Intensity, Time, Type protocols, heart rate targets, and clinical contraindications.",
+            "default": true
+        },
+        "includeCuratedBreakthroughs": {
+            "title": "Include Landmark Clinical Breakthroughs",
+            "type": "boolean",
+            "description": "Include curated landmark trial publications (NEJM, Lancet, JAMA, Nature Medicine).",
+            "default": true
+        },
+        "fetchLiveEuropePmcTrials": {
+            "title": "Harvester Live Trials from Europe PMC / PubMed",
+            "type": "boolean",
+            "description": "Query Europe PMC REST API in real time for recent randomized controlled trials.",
+            "default": true
+        },
+        "patientSimulationAge": {
+            "title": "Patient Risk Profile: Age",
+            "type": "integer",
+            "description": "Simulated patient age for multi-system risk score calculation.",
+            "default": 52,
+            "minimum": 18,
+            "maximum": 100
+        },
+        "patientSimulationHba1c": {
+            "title": "Patient Risk Profile: HbA1c (%)",
+            "type": "number",
+            "description": "Glycated hemoglobin percentage (e.g. 5.5 = normal, 6.2 = prediabetes, 7.8 = diabetes).",
+            "default": 6.2,
+            "minimum": 4.0,
+            "maximum": 16.0
+        },
+        "patientSimulationSystolicBp": {
+            "title": "Patient Risk Profile: Systolic BP (mmHg)",
+            "type": "integer",
+            "description": "Systolic blood pressure.",
+            "default": 135,
+            "minimum": 80,
+            "maximum": 240
+        },
+        "patientSimulationLdlC": {
+            "title": "Patient Risk Profile: LDL-C (mg/dL)",
+            "type": "integer",
+            "description": "Low-density lipoprotein cholesterol level.",
+            "default": 125,
+            "minimum": 30,
+            "maximum": 350
+        },
+        "patientSimulationBmi": {
+            "title": "Patient Risk Profile: BMI",
+            "type": "number",
+            "description": "Body Mass Index.",
+            "default": 27.8,
+            "minimum": 15.0,
+            "maximum": 60.0
+        },
+        "apiKey": {
+            "title": "Apify API Token / Custom Key",
+            "type": "string",
+            "description": "Optional Apify API token or custom authentication key for MCP and programmatic triggers.",
+            "editor": "textfield"
+        }
+    }
+}
