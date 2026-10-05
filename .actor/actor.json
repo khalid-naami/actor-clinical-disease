@@ -1,0 +1,16 @@
+{
+    "actorSpecification": 1,
+    "name": "chronic-disease-clinical-intelligence",
+    "title": "Chronic Disease Clinical Intelligence & Medical Breakthroughs",
+    "description": "Evidence-based clinical protocol generator, FITT exercise prescriptions, precision medical nutrition, patient risk stratification, and Europe PMC breakthrough trial harvester for 7 chronic diseases.",
+    "version": "1.0.0",
+    "meta": {
+        "template": "python-empty"
+    },
+    "dockerfile": "./Dockerfile",
+    "input": "./input_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "output": "./output_schema.json"
+}
