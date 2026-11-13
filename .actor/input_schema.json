@@ -57,8 +57,8 @@
             "type": "number",
             "description": "Glycated hemoglobin percentage (e.g. 5.5 = normal, 6.2 = prediabetes, 7.8 = diabetes).",
             "default": 6.2,
-            "minimum": 4.0,
-            "maximum": 16.0
+            "minimum": 4,
+            "maximum": 16
         },
         "patientSimulationSystolicBp": {
             "title": "Patient Risk Profile: Systolic BP (mmHg)",
@@ -81,14 +81,15 @@
             "type": "number",
             "description": "Body Mass Index.",
             "default": 27.8,
-            "minimum": 15.0,
-            "maximum": 60.0
+            "minimum": 15,
+            "maximum": 60
         },
         "apiKey": {
             "title": "Apify API Token / Custom Key",
             "type": "string",
             "description": "Optional Apify API token or custom authentication key for MCP and programmatic triggers.",
-            "editor": "textfield"
+            "editor": "textfield",
+            "isSecret": true
         }
     }
 }
