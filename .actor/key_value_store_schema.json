@@ -1,0 +1,15 @@
+{
+    "actorKeyValueStoreSchemaVersion": 1,
+    "title": "Clinical Disease Epidemiology Key-Value Store",
+    "description": "Key-value store schema for Clinical Disease Epidemiology & Biomarker Risk Engine.",
+    "collections": {
+        "default": {
+            "title": "Default Output Records",
+            "description": "Clinical executive summary and patient biomarker risk stratification stored under OUTPUT.",
+            "keyPrefix": "OUTPUT",
+            "contentTypes": [
+                "application/json"
+            ]
+        }
+    }
+}
