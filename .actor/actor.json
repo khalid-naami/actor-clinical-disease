@@ -1,16 +1,17 @@
 {
     "actorSpecification": 1,
-    "name": "chronic-disease-clinical-intelligence",
-    "title": "Chronic Disease Clinical Intelligence & Medical Breakthroughs",
-    "description": "Evidence-based clinical protocol generator, FITT exercise prescriptions, precision medical nutrition, patient risk stratification, and Europe PMC breakthrough trial harvester for 7 chronic diseases.",
+    "name": "clinical-disease-epidemiology",
+    "title": "Clinical Disease Epidemiology & Biomarker Risk Engine",
+    "description": "Scrapes and analyzes clinical disease epidemiology, PubMed medical literature, ADA/ESC biomarker risk stratification (HbA1c, eGFR, ASCVD), and MNT nutrition & FITT exercise prescriptions.",
     "version": "1.0.0",
     "meta": {
-        "template": "python-empty"
+        "templateId": "python-empty"
     },
-    "dockerfile": "./Dockerfile",
+    "dockerfile": "../Dockerfile",
     "input": "./input_schema.json",
     "storages": {
-        "dataset": "./dataset_schema.json"
+        "dataset": "./dataset_schema.json",
+        "keyValueStore": "./key_value_store_schema.json"
     },
     "output": "./output_schema.json"
 }
