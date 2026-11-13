@@ -1,39 +1,147 @@
 {
     "actorSpecification": 1,
     "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
             "record_type": {
-                "type": "string",
+                "type": ["string", "null"],
                 "title": "Record Type"
             },
             "disease_name": {
-                "type": "string",
+                "type": ["string", "null"],
                 "title": "Disease Name"
             },
-            "icd10": {
-                "type": "string",
-                "title": "ICD-10 Code"
+            "icd_11_code": {
+                "type": ["string", "null"],
+                "title": "ICD-11 Code"
+            },
+            "category": {
+                "type": ["string", "null"],
+                "title": "Medical Specialty Category"
+            },
+            "global_prevalence": {
+                "type": ["string", "null"],
+                "title": "Global Prevalence"
+            },
+            "annual_mortality": {
+                "type": ["string", "null"],
+                "title": "Annual Mortality"
+            },
+            "guidelines": {
+                "type": ["string", "null"],
+                "title": "Clinical Practice Guidelines"
+            },
+            "summary": {
+                "type": ["string", "null"],
+                "title": "Clinical Summary"
+            },
+            "pathophysiology": {
+                "type": ["string", "null"],
+                "title": "Pathophysiology"
+            },
+            "primary_biomarkers": {
+                "type": ["object", "null"],
+                "title": "Primary Biomarkers & Targets",
+                "additionalProperties": true
+            },
+            "pharmacological_pillars": {
+                "type": ["array", "null"],
+                "title": "Pharmacological Pillars",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "key_complications": {
+                "type": ["array", "null"],
+                "title": "Key Complications",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "risk_factors": {
+                "type": ["object", "null"],
+                "title": "Modifiable & Non-Modifiable Risk Factors",
+                "additionalProperties": true
             },
             "medical_nutrition_protocol": {
-                "type": "object",
-                "title": "Medical Nutrition Plan"
+                "type": ["object", "null"],
+                "title": "Medical Nutrition Therapy (MNT)",
+                "additionalProperties": true
             },
             "fitt_exercise_prescription": {
-                "type": "object",
-                "title": "FITT Exercise Prescription"
+                "type": ["object", "null"],
+                "title": "FITT Exercise Prescription",
+                "additionalProperties": true
             },
-            "landmark_breakthrough_publications": {
-                "type": "array",
-                "title": "NEJM / Lancet Breakthrough Trials"
+            "pubmed_clinical_studies": {
+                "type": ["array", "null"],
+                "title": "PubMed Clinical Trials & Reviews",
+                "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                }
             },
-            "recent_live_clinical_trials": {
-                "type": "array",
-                "title": "Europe PMC Live Studies"
+            "patient_parameters": {
+                "type": ["object", "null"],
+                "title": "Simulated Patient Biomarker Inputs",
+                "additionalProperties": true
             },
             "risk_stratification_results": {
-                "type": "object",
-                "title": "Patient Risk Scoring Results"
+                "type": ["object", "null"],
+                "title": "Patient Biomarker Risk Stratification",
+                "additionalProperties": true
+            }
+        },
+        "additionalProperties": true,
+        "required": []
+    },
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": [
+                    "record_type",
+                    "disease_name",
+                    "icd_11_code",
+                    "medical_nutrition_protocol",
+                    "fitt_exercise_prescription",
+                    "pubmed_clinical_studies",
+                    "risk_stratification_results"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "record_type": {
+                        "label": "Record Type",
+                        "format": "text"
+                    },
+                    "disease_name": {
+                        "label": "Disease Name",
+                        "format": "text"
+                    },
+                    "icd_11_code": {
+                        "label": "ICD-11 Code",
+                        "format": "text"
+                    },
+                    "medical_nutrition_protocol": {
+                        "label": "Medical Nutrition Therapy (MNT)",
+                        "format": "object"
+                    },
+                    "fitt_exercise_prescription": {
+                        "label": "FITT Exercise Prescription",
+                        "format": "object"
+                    },
+                    "pubmed_clinical_studies": {
+                        "label": "PubMed Clinical Trials & Reviews",
+                        "format": "array"
+                    },
+                    "risk_stratification_results": {
+                        "label": "Patient Biomarker Risk Stratification",
+                        "format": "object"
+                    }
+                }
             }
         }
     }
